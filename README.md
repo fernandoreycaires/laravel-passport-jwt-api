@@ -99,3 +99,8 @@ APP_KEY=base64:dY7hiPSZq5C1rxTk9+vlQKF7Wy6snxREMOUCjuZ0e7o=
 > Tipo: GET <br>
 > URL: http://localhost/api/v1/users <br>
 > Autenticação, colocar token do tipo Bearer, informado quando faz o login do usuario
+
+### Logout
+> Tipo: POST <br>
+> URL: http://localhost/api/v1/logout <br>
+> Autenticação, colocar token do tipo Bearer, informado quando faz o login do usuario
