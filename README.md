@@ -64,10 +64,17 @@ APP_KEY=base64:dY7hiPSZq5C1rxTk9+vlQKF7Wy6snxREMOUCjuZ0e7o=
 ` $ sudo docker-compose exec app php artisan key:generate` <br>
 ` $ sudo docker-compose exec app php artisan migrate` <br>
 
+## No projeto
 
-## Alimentar o banco com informações iniciais temporarias
+> Abra database/migrations
+> monitore essa pasta e rode no terminal 
 
-` $ sudo docker-compose exec app php artisan db:seed ` <br>
+` $ sudo docker compose exec app php artisan passport:install `
+
+> Note que na pasta migrations ira aparecer alguns arquivos, apague-os , somente os arquivos novos que irão aparecer
+> Após apagar os arquivos, dẽ continuidade no terminal com o passo a passo do Passport, para rodar o Migrate e criar um usuario de Tpken
+
+
 
 
 ## Informações extras
@@ -86,7 +93,7 @@ APP_KEY=base64:dY7hiPSZq5C1rxTk9+vlQKF7Wy6snxREMOUCjuZ0e7o=
 ```JSON
 {
     "name": "Nome Completo do Usuario",
-    "email": "email.do.usuario@teste.com.br",
+    "email": "teste@exemplo.com.br",
     "password": "senha123",
     "password_confirmation": "senha123"
 }
