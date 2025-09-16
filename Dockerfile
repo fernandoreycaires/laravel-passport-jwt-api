@@ -18,12 +18,17 @@ RUN apt update && apt install -y\
     nano \
     unzip \
     git \
-    curl 
+    curl \
+    libpq-dev
 
 # Clear cache
 RUN apt clean && rm -rf /var/lib/apt/lists/*
 
 # Install extensions
+# RUN docker-php-ext-install pdo_mysql
+RUN docker-php-ext-install pdo
+RUN docker-php-ext-install pdo_pgsql
+RUN docker-php-ext-install pgsql
 RUN docker-php-ext-install pdo_mysql
 # RUN docker-php-ext-install mbstring 
 # RUN docker-php-ext-install zip 

@@ -35,23 +35,42 @@ services:
     networks:
       - net-app-api
 
-  #MySQL/MariaDb Service
+  # #MySQL/MariaDb Service
+  # db:
+  #   image: mariadb
+  #   container_name: db
+  #   restart: unless-stopped
+  #   tty: true
+  #   ports:
+  #     - "3306:3306"
+  #   environment:
+  #     MYSQL_DATABASE: app-frc
+  #     MYSQL_ROOT_PASSWORD: uexozYAJe6QvOlS1JP322541frac$
+  #     SERVICE_TAGS: dev
+  #     SERVICE_NAME: mariadb
+  #   volumes:
+  #     # - dbdata:/var/lib/mysql # Persiste o conteudo em uma pasta dentro do container
+  #     - ./docker_components/db/sql:/var/lib/mysql # Persiste o conteudo em uma pasta fora do container docker_components/db/sql
+  #     - ./docker_components/db/mariadb/my.cnf:/etc/mysql/my.cnf
+  #   networks:
+  #     - net-app-api
+
+  #PostgreSQL Service
   db:
-    image: mariadb
+    image: postgres:17-alpine
     container_name: db
     restart: unless-stopped
     tty: true
     ports:
-      - "3306:3306"
+      - "5432:5432"
     environment:
-      MYSQL_DATABASE: app-frc
-      MYSQL_ROOT_PASSWORD: uexozYAJe6QvOlS1JP322541frac$
+      POSTGRES_DB: app-frc
+      POSTGRES_USER: frc_user
+      POSTGRES_PASSWORD: uexozYAJe6QvOlS1JP322541frac$
       SERVICE_TAGS: dev
-      SERVICE_NAME: mariadb
+      SERVICE_NAME: postgres
     volumes:
-      # - dbdata:/var/lib/mysql # Persiste o conteudo em uma pasta dentro do container
-      - ./docker_components/db/sql:/var/lib/mysql # Persiste o conteudo em uma pasta dentro de container docker_components/db/sql
-      - ./docker_components/db/mariadb/my.cnf:/etc/mysql/my.cnf
+      - ./docker_components/db/postgres:/var/lib/postgresql/data
     networks:
       - net-app-api
 

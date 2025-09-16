@@ -14,13 +14,23 @@ Contém já configurado uma API de usuarios com autenticação JWT. <br>
 > Duplique o arquivo .env.example e renomeie para .env <br>
 > Abra-o e coloque as credenciais de sua database <br> 
 > Para utilizar a base do Docker utilize a configuração citada abaixo
+> Se atente para deixar sem comentario somente a configuração do banco que ira utilizar
 
 ```php
+## MariaDB
 DB_CONNECTION=mysql
 DB_HOST=db
 DB_PORT=3306
 DB_DATABASE=app-frc
 DB_USERNAME=root
+DB_PASSWORD=uexozYAJe6QvOlS1JP322541frac$
+
+## PostGreSQL
+DB_CONNECTION=pgsql
+DB_HOST=db
+DB_PORT=5432
+DB_DATABASE=app-frc
+DB_USERNAME=frc_user
 DB_PASSWORD=uexozYAJe6QvOlS1JP322541frac$
 ```
 
@@ -32,6 +42,11 @@ APP_KEY=base64:dY7hiPSZq5C1rxTk9+vlQKF7Wy6snxREMOUCjuZ0e7o=
 
 ## Baixar bibliotecas
 
+> Atualize o NodeJS para a versão mais recente, ou dará problema ao rodar os comandos abaixo
+> Após atualizar o NodeJS prosiga com os comandos abaixo
+
+` $ sudo npm install ` <br>
+` $ sudo npm run build ` <br>
 
 > Para instalar as dependencias: 
 
